@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BrickWork – Giełda</title>
+		<meta name="description" content="Przeglądaj tysiące zestawów LEGO, zarządzaj swoją kolekcją i znajdź inspiracje. Dla kolekcjonerów i rodziców.">
+        <meta name="keywords" content="LEGO, zestawy, kolekcja, Rebrickable, klocki, katalog, AFOL, zarządzanie kolekcją, lista życzeń">
+		<meta name="author" content="Tomasz Hanusek, Damian Spodar / BrickWork">
+        <link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+	</head>
+	<body class="market-page">
+		<header class="main-header">
+			<div class="header-container">
+				<a href="index.html" class="logo">
+					<img src="assets/img/logo.png" alt="BrickWork Logo">
+					</a>
+
+				<button class="hamburger" aria-label="Menu" aria-expanded="false">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</button>
+
+				<nav class="main-nav">
+					<ul>
+						<li><a href="index.html" class="btn">Strona Główna</a></li>
+						<li><a href="catalog.html" class="btn">Katalog</a></li>
+						<li><a href="collection.html" class="btn">Moja Kolekcja</a></li>
+						<li><a href="market.html" class="btn">Giełda</a></li>
+						<li><a href="contact.html" class="btn">Kontakt</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<div class="container">
+				<div class="section-header">
+					<h2>Giełda</h2>
+					<p>Planuj zakupy i przygotuj ogłoszenia sprzedażowe</p>
+				</div>
+
+				<div class="market-tabs">
+					<button class="tab-btn active" data-tab="buy-section">Kupię (Lista Życzeń)</button>
+					<button class="tab-btn" data-tab="sell-section">Sprzedam (Generator)</button>
+				</div>
+
+				<div id="buy-section" class="tab-content active">
+					<div class="market-section-header">
+						<h3>Szukaj ofert na BrickLink</h3>
+						<span id="wishlist-count" class="count-badge">Liczba zestawów: 0</span>
+					</div>
+
+					<div class="toolbar">
+						<div class="filter-control">
+							<label>Filtruj serię:</label>
+							<select id="wishlist-theme-filter">
+								<option value="all">Wszystkie serie</option>
+							</select>
+						</div>
+
+						<div class="filter-control">
+							<label>Sortowanie:</label>
+							<select id="wishlist-sort">
+								<option value="added-desc">Data dodania (Od najnowszych)</option>
+								<option value="added-asc">Data dodania (Od najstarszych)</option>
+								<option value="year-desc">Rok wydania (Najnowsze)</option>
+								<option value="year-asc">Rok wydania (Najstarsze)</option>
+								<option value="parts-desc">Liczba elementów (Największe)</option>
+							</select>
+						</div>
+					</div>
+
+					<div id="wishlist-grid" class="catalog-grid">
+					</div>
+				</div>
+
+				<div id="sell-section" class="tab-content" style="display: none;">
+					<div class="generator-layout">
+
+						<aside class="generator-sidebar">
+							<h3>1. Wybierz zestaw</h3>
+							<div class="sidebar-search-box">
+								<input type="text" id="sell-search" placeholder="Szukaj (nazwa lub nr)">
+							</div>
+							<div id="sellable-list" class="sellable-list">
+								<div class="loader">Ładowanie kolekcji...</div>
+							</div>
+						</aside>
+
+						<section class="generator-form-container">
+							<h3>2. Konfiguracja ogłoszenia</h3>
+							<form id="ad-generator-form">
+								<div class="selected-set-info" id="selected-set-display" style="display: none;">
+									<img id="gen-img" src="/assets/img" alt="Zestaw do sprzedaży">
+									<div>
+										<h4 id="gen-title">Nazwa zestawu</h4>
+										<small id="gen-num">00000</small>
+									</div>
+								</div>
+								<p id="no-set-selected-msg">Wybierz zestaw z listy po lewej stronie.</p>
+
+								<div class="form-grid">
+									<div class="form-group">
+										<label>Stan klocków:</label>
+										<select id="cond-bricks">
+											<option value="Nowy (plomby)">Nowy (plomby)</option>
+											<option value="Używany, stan idealny">Używany, stan idealny</option>
+											<option value="Używany, stan dobry">Używany, stan dobry</option>
+											<option value="Używany, widoczne ślady">Używany, widoczne ślady</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Stan pudełka:</label>
+										<select id="cond-box">
+											<option value="Idealne">Idealne</option>
+											<option value="Dobre (lekkie otarcia)">Dobre (lekkie otarcia)</option>
+											<option value="Uszkodzone">Uszkodzone</option>
+											<option value="Brak pudełka">Brak pudełka</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Instrukcja:</label>
+										<select id="cond-instr">
+											<option value="Jest, kompletna">Tak, kompletna</option>
+											<option value="Jest, uszkodzona">Tak, ale uszkodzona</option>
+											<option value="Brak">Brak</option>
+										</select>
+									</div>
+									<div class="form-group">
+										<label>Kompletność:</label>
+										<select id="cond-comp">
+											<option value="100% (sprawdzone)">100% (sprawdzone)</option>
+											<option value="Brakuje kilku klocków">Brakuje kilku klocków</option>
+											<option value="Nie sprawdzone">Nie sprawdzone</option>
+										</select>
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label>Dodatkowy opis (opcjonalne):</label>
+									<textarea id="custom-desc" rows="2" placeholder="Napisz np. czy zestaw był zakurzony, czy z domu palącego itp."></textarea>
+								</div>
+
+								<button type="button" id="generate-btn" class="btn btn-full" disabled>Generuj tekst ogłoszenia</button>
+							</form>
+
+							<div class="output-area" id="output-area" style="display:none;">
+								<label>Gotowy tekst (skopiuj i wklej na wybrany portal):</label>
+								<textarea id="final-text" readonly></textarea>
+								<button id="copy-btn" class="btn-outline">Skopiuj do schowka</button>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+		</main>
+		<footer class="main-footer">
+			<div class="footer-container">
+
+				<div class="footer-col brand-col">
+					<a href="index.html" class="footer-logo-link">
+						<img src="assets/img/logo.png" alt="BrickWork Logo">
+					</a>
+					<p class="footer-desc">
+						Tworzymy narzędzia dla pasjonatów klocków. Zarządzaj, odkrywaj i buduj swoją wymarzoną kolekcję.
+					</p>
+					<div class="social-media">
+						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+						<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+						<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+					</div>
+				</div>
+
+				<div class="footer-col">
+					<h4>Nawigacja</h4>
+					<ul class="footer-links">
+						<li><a href="catalog.html">Katalog zestawów</a></li>
+						<li><a href="collection.html">Moja kolekcja</a></li>
+						<li><a href="market.html">Giełda</a></li>
+						<li><a href="contact.html">Kontakt</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4>Autorzy</h4>
+					Tomasz Hanusek
+					<div class="social-media">
+						<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+					</div>
+					Damian Spodar
+					<div class="social-media">
+						<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+					</div>
+				</div>
+
+				<div class="footer-col legal-col">
+					<h4>Informacje</h4>
+					<p>Dane: <a href="https://rebrickable.com/api/" target="_blank">Rebrickable API v3</a></p>
+					<p>Projekt edukacyjny 2025/2026.</p>
+					<p class="copyright">&copy;2026 BrickWork. Wszelkie prawa zastrzeżone.</p>
+					<p class="disclaimer">LEGO® jest znakiem towarowym Grupy LEGO.</p>
+				</div>
+			</div>
+		</footer>
+
+		<script src="assets/js/api.js"></script>
+		<script src="assets/js/ui.js"></script>
+		<script src="assets/js/main.js"></script>
+	</body>
+</html>

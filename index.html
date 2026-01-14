@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+	<head>
+		<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>BrickWork – Internetowe Centrum Kolekcjonera LEGO</title>
+		<meta name="description" content="Przeglądaj tysiące zestawów LEGO, zarządzaj swoją kolekcją i znajdź inspiracje. Dla kolekcjonerów i rodziców.">
+        <meta name="keywords" content="LEGO, zestawy, kolekcja, Rebrickable, klocki, katalog, AFOL, zarządzanie kolekcją, lista życzeń">
+		<meta name="author" content="Tomasz Hanusek, Damian Spodar / BrickWork">
+		<link rel="stylesheet" href="assets/css/main.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+		<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico">
+	</head>
+	<body class="home">
+		<header class="main-header">
+			<div class="header-container">
+				<a href="index.html" class="logo">
+					<img src="assets/img/logo.png" alt="BrickWork Logo">
+				</a>
+
+				<button class="hamburger" aria-label="Menu" aria-expanded="false">
+					<span class="bar"></span>
+					<span class="bar"></span>
+					<span class="bar"></span>
+				</button>
+
+				<nav class="main-nav">
+					<ul>
+						<li><a href="index.html" class="btn">Strona Główna</a></li>
+						<li><a href="catalog.html" class="btn">Katalog</a></li>
+						<li><a href="collection.html" class="btn">Moja Kolekcja</a></li>
+						<li><a href="market.html" class="btn">Giełda</a></li>
+						<li><a href="contact.html" class="btn">Kontakt</a></li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<main>
+			<section id="welcome" class="hero-section">
+				<div class="hero-content">
+					<h1>Witaj w <span class="highlightred">Brick</span><span class="highlightyellow">Work</span></h1>
+					<p class="hero-subtitle">Twoje centrum zarządzania kolekcją LEGO.<br>Przeglądaj, dodawaj, planuj.</p>
+					<div class="hero-actions">
+						<a href="catalog.html" class="btn btn-lg">Przeglądaj katalog</a>
+						<a href="collection.html" class="btn btn-lg">Moja kolekcja</a>
+					</div>
+				</div>
+			</section>
+
+			<section id="new-arrivals" class="arrivals-section">
+				<div class="section-header">
+					<h2>Najnowsze premiery LEGO</h2>
+					<p>Odkryj zestawy, które właśnie trafiły do katalogu i sprzedaży.</p>
+				</div>
+
+				<div class="slider-wrapper">
+					<button class="slider-btn prev" aria-label="Poprzednie" onclick="BrickUI.scrollSlider(-1)">&#10094;</button>
+
+					<div id="new-arrivals-container" class="slider-track">
+						<div class="loader">Ładowanie nowości...</div>
+					</div>
+
+					<button class="slider-btn next" aria-label="Następne" onclick="BrickUI.scrollSlider(1)">&#10095;</button>
+				</div>
+
+				<div class="slider-footer">
+					<a href="catalog.html?year=2026&sort=-date" class="btn btn-lg">Zobacz wszystkie nowości</a>
+				</div>
+			</section>
+
+			<section id="about" class="about-section">
+				<div class="container">
+					<div class="section-header">
+						<h2>O serwisie BrickWork</h2>
+						<p>BrickWork to platforma stworzona z myślą o dorosłych fanach LEGO (AFOL) oraz rodzicach szukających inspiracji. Łączymy techniczne podejście z przyjaznym interfejsem.</p>
+					</div>
+
+					<div class="features-grid">
+						<div class="feature-box">
+							<span class="feature-icon"><i class="fa-solid fa-book-open"></i></span>
+							<h3>Baza wiedzy</h3>
+							<p>Ponad 25 000 zestawów w katalogu</p>
+						</div>
+						<div class="feature-box">
+							<span class="feature-icon"><i class="fa-solid fa-magnifying-glass"></i></span>
+							<h3>Wyszukiwarka</h3>
+							<p>Zaawansowane filtry dla kolekcjonerów</p>
+						</div>
+						<div class="feature-box">
+							<span class="feature-icon"><i class="fa-solid fa-layer-group"></i></span>
+							<h3>Kolekcja</h3>
+							<p>Zarządzaj swoimi zasobami i listą życzeń</p>
+						</div>
+						<div class="feature-box">
+							<span class="feature-icon"><i class="fa-solid fa-hand-holding-dollar"></i></span>
+							<h3>Darmowy</h3>
+							<p>Pełny dostęp bez opłat i subskrypcji</p>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="main-footer">
+			<div class="footer-container">
+
+				<div class="footer-col brand-col">
+					<a href="index.html" class="footer-logo-link">
+						<img src="assets/img/logo.png" alt="BrickWork Logo">
+					</a>
+					<p class="footer-desc">
+						Tworzymy narzędzia dla pasjonatów klocków. Zarządzaj, odkrywaj i buduj swoją wymarzoną kolekcję.
+					</p>
+					<div class="social-media">
+						<a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+						<a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+						<a href="#" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+						<a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+					</div>
+				</div>
+
+				<div class="footer-col">
+					<h4>Nawigacja</h4>
+					<ul class="footer-links">
+						<li><a href="catalog.html">Katalog zestawów</a></li>
+						<li><a href="collection.html">Moja kolekcja</a></li>
+						<li><a href="market.html">Giełda</a></li>
+						<li><a href="contact.html">Kontakt</a></li>
+					</ul>
+				</div>
+
+				<div class="footer-col">
+					<h4>Autorzy</h4>
+					Tomasz Hanusek
+					<div class="social-media">
+						<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+					</div>
+					Damian Spodar
+					<div class="social-media">
+						<a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+						<a href="#" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+					</div>
+				</div>
+
+				<div class="footer-col legal-col">
+					<h4>Informacje</h4>
+					<p>Dane: <a href="https://rebrickable.com/api/" target="_blank">Rebrickable API v3</a></p>
+					<p>Projekt edukacyjny 2025/2026.</p>
+					<p class="copyright">&copy;2026 BrickWork. Wszelkie prawa zastrzeżone.</p>
+					<p class="disclaimer">LEGO® jest znakiem towarowym Grupy LEGO.</p>
+				</div>
+			</div>
+		</footer>
+
+        <script src="assets/js/api.js"></script>
+        <script src="assets/js/ui.js"></script>
+        <script src="assets/js/main.js"></script>
+	</body>
+</html>
