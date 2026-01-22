@@ -56,18 +56,32 @@ function initGlobalEvents() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.main-nav');
     if (hamburger && nav) {
+        const overlay = document.createElement('div');
+        overlay.className = 'menu-overlay';
+        document.body.appendChild(overlay);
+
+        const closeMenu = () => {
+            hamburger.classList.remove("active");
+            nav.classList.remove("active");
+            overlay.classList.remove("active");
+            hamburger.setAttribute("aria-expanded", "false");
+        };
+
         hamburger.addEventListener("click", () => {
-            hamburger.classList.toggle("active");
+            const isActive = hamburger.classList.toggle("active");
             nav.classList.toggle("active");
-            const expanded = hamburger.classList.contains("active");
-            hamburger.setAttribute("aria-expanded", expanded);
+            overlay.classList.toggle("active");
+            hamburger.setAttribute("aria-expanded", isActive);
         });
 
         nav.addEventListener("click", (e) => {
             if (e.target.matches("a")) {
-                hamburger.classList.remove("active");
-                nav.classList.remove("active");
+                closeMenu();
             }
+        });
+
+        overlay.addEventListener("click", () => {
+            closeMenu();
         });
     }
 }
