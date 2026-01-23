@@ -1,8 +1,8 @@
 # BrickWork - Internetowe Centrum Kolekcjonera LEGO
 
-BrickWork to lekka, statyczna aplikacja webowa. Umożliwia przeglądanie katalogu zestawów, zarządzanie własną kolekcją i listą życzeń oraz sprawdzenie ofert sprzedaży pożądanych zestawów i przygotowanie tekstu do ogłoszeń sprzedaży. Dane zestawów pochodzą z [Rebrickable API v3](https://rebrickable.com/api/).
+BrickWork to lekka, statyczna aplikacja webowa. Umożliwia przeglądanie katalogu zestawów, zarządzanie własną kolekcją i listą życzeń oraz sprawdzenie ofert sprzedaży pożądanych zestawów i przygotowanie tekstu do ogłoszeń sprzedaży. Aplikacja działa całkowicie po stronie klienta (frontend-only). Dane zestawów pochodzą z [Rebrickable API v3](https://rebrickable.com/api/).
 
-- Demo lokalne: uruchom dowolny serwer statyczny i wejdź na `index.html`
+- Demo: [Uruchom stronę](https://arraxus.github.io/BrickWork/)
 - Język interfejsu: polski
 - Technologie: HTML5, CSS3, JavaScript, Rebrickable API, Font Awesome
 
