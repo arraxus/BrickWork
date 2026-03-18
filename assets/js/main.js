@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
 // Zarządzanie localstorage dla kolekcji i listy życzeń
 class StorageList {
     constructor(storageKey) {

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
 // Konfiguracja API
 const API_CONFIG = {
     KEY: 'REBRICKABLE_KEY_PLACEHOLDER',

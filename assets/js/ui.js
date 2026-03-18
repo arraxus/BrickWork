@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
 // Elementy UI
 // Uniwersalna funkcja tworząca kartę zestawu
 function createSetCard(set, mode = "standard") {
