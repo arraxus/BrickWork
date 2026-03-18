@@ -160,4 +160,5 @@ Udostępniane funkcje globalnie poprzez `window.BrickAPI`:
 - [Rebrickable](https://rebrickable.com/api/) – źródło danych zestawów
 - [Font Awesome](https://fontawesome.com/) – zestaw ikon
 
-©2026 BrickWork. Wszelkie prawa zastrzeżone.
+Ten projekt jest objęty licencją GNU Affero General Public License w wersji 3.0 lub nowszej (AGPL-3.0 lub nowsza). Zobacz plik LICENSE.\
+Licencja AGPL dotyczy kodu w tym repozytorium. Dane zwrócone przez Rebrickable nie są objęte licencją tego repozytorium i podlegają warunkom Rebrickable.
